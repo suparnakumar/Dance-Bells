@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AppView: View {
     
+    @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
     init() {
@@ -62,6 +63,7 @@ struct AppView: View {
                 .tabItem { Label("Profile", systemImage: "person.fill") }
                 .tag(Tab.profile)
         }
+        .environmentObject(profile)
         .tint(.white)
     }
     
@@ -83,5 +85,6 @@ struct AppView: View {
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
+            .environmentObject(ProfileManager())
     }
 }

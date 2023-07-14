@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SavedMusicView: View {
     
+    @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
     private var SearchBar: some View {
@@ -41,15 +42,16 @@ struct SavedMusicView: View {
     
     private struct SongItemView: View {
         var song: Song
-        @Binding var idOfSongPlaying: UUID?
+        @Binding var currentSongPlaying: Song?
         
         var body: some View {
             HStack {
                 
-                let isPlayingSong = idOfSongPlaying == song.id
+                let isPlayingSong = song == currentSongPlaying
+                
                 // Play / Pause button
                 Button {
-                    withAnimation { idOfSongPlaying = isPlayingSong ? nil : song.id }
+                    withAnimation { currentSongPlaying = isPlayingSong ? nil : song }
                 } label: {
                     Image(systemName: isPlayingSong ? "pause.circle.fill" : "play.circle.fill")
                         .foregroundColor(Color(uiColor: UIColor.purple).opacity(0.8))
@@ -90,58 +92,69 @@ struct SavedMusicView: View {
         }
     }
     
-    private var songPlayer: some View {
+    private var SongPlayer: some View {
         ZStack {
             Color.white
             Color(uiColor: UIColor.purple).opacity(0.75)
             
-            let song: Song = viewModel.songList[0]
-            
-            HStack {
+            if let song: Song = viewModel.currentSongPlaying {
                 
-                Rectangle()
-                    .fill(Color(uiColor: UIColor.purple))
-                    .frame(width: 30, height: 30)
-                
-                Text(song.songName)
-                    .foregroundColor(.white)
-                    .font(.system(size: 14, weight: .medium))
-                
-                Circle()
-                    .fill(.white)
-                    .frame(width: 5)
-                
-                Text(song.artistName)
-                    .foregroundColor(.white.opacity(0.9))
-                    .font(.system(size: 14, weight: .light))
-                
-                Spacer()
-                
-                Button {
-                    withAnimation { viewModel.idOfSongPlaying = nil }
-                } label: {
-                    Image(systemName: "pause.fill")
-                        .font(.system(size: 20))
-                }
-            }
-            .padding(.horizontal)
-            
-            VStack {
-                Spacer()
-                
-                HStack(spacing: 0) {
+                HStack {
+                    
                     Rectangle()
-                        .frame(width: 45, height: 1)
+                        .fill(Color(uiColor: UIColor.purple))
+                        .frame(width: 30, height: 30)
+                    
+                    Text(song.songName)
+                        .foregroundColor(.white)
+                        .font(.system(size: 14, weight: .medium))
                     
                     Circle()
-                        .frame(width: 2)
+                        .fill(.white)
+                        .frame(width: 5)
+                    
+                    Text(song.artistName)
+                        .foregroundColor(.white.opacity(0.9))
+                        .font(.system(size: 14, weight: .light))
                     
                     Spacer()
+                    
+                    Button {
+                        withAnimation { viewModel.currentSongPlaying = nil }
+                    } label: {
+                        Image(systemName: "pause.fill")
+                            .font(.system(size: 20))
+                    }
                 }
-                .foregroundColor(.white)
+                .padding(.horizontal)
+                
+                VStack {
+                    Spacer()
+                    
+                    HStack(spacing: 0) {
+                        Rectangle()
+                            .frame(width: 45, height: 1)
+                        
+                        Circle()
+                            .frame(width: 2)
+                        
+                        Spacer()
+                    }
+                    .foregroundColor(.white)
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: 50)
+    }
+    
+    private var SongListScrollView: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                ForEach(profile.savedSongs, id: \.self) { song in
+                    SongItemView(song: song, currentSongPlaying: $viewModel.currentSongPlaying)
+                }
+            }
+        }
     }
     
     var body: some View {
@@ -149,18 +162,12 @@ struct SavedMusicView: View {
             
             SearchBar.padding()
             
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(viewModel.songList) { song in
-                        SongItemView(song: song, idOfSongPlaying: $viewModel.idOfSongPlaying)
-                    }
-                }
-            }
+            SongListScrollView
             
             Spacer()
             
-            if viewModel.idOfSongPlaying != nil {
-                songPlayer
+            if viewModel.currentSongPlaying != nil {
+                SongPlayer
             }
             
             
@@ -171,5 +178,6 @@ struct SavedMusicView: View {
 struct SavedMusicView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
+            .environmentObject(ProfileManager())
     }
 }

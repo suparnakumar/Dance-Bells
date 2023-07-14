@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
     private var Header: some View {
@@ -21,7 +22,7 @@ struct ProfileView: View {
                 
             } label: {
                 HStack(spacing: 10) {
-                    Text(viewModel.name)
+                    Text(profile.name)
                         .font(.system(size: 18, weight: .semibold))
                     
                     Image(systemName: "chevron.down")
@@ -90,10 +91,10 @@ struct ProfileView: View {
             ProfilePic
                 .padding(.vertical)
             
-            Text("@\(viewModel.username)")
+            Text("@\(profile.username)")
                 .font(.system(size: 18, weight: .medium))
             
-            Text(viewModel.bio)
+            Text(profile.bio)
                 .foregroundColor(.gray)
                 .font(.system(size: 15, weight: .regular))
                 .padding()
@@ -113,5 +114,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
+            .environmentObject(ProfileManager())
     }
 }

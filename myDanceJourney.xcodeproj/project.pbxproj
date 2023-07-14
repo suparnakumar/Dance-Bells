@@ -32,6 +32,10 @@
 		4FFD1F042A60B5440033A127 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */; };
 		4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F052A60BC990033A127 /* DanceStyle.swift */; };
 		4FFD1F082A60BDAD0033A127 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F072A60BDAD0033A127 /* ExploreViewModel.swift */; };
+		4FFD1F0A2A611C150033A127 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F092A611C150033A127 /* ProfileManager.swift */; };
+		4FFD1F0C2A611C860033A127 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0B2A611C860033A127 /* Song.swift */; };
+		4FFD1F0E2A611DC50033A127 /* DanceGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */; };
+		4FFD1F102A611DD90033A127 /* DanceLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,10 @@
 		4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4FFD1F052A60BC990033A127 /* DanceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceStyle.swift; sourceTree = "<group>"; };
 		4FFD1F072A60BDAD0033A127 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		4FFD1F092A611C150033A127 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		4FFD1F0B2A611C860033A127 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceGoal.swift; sourceTree = "<group>"; };
+		4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,10 @@
 			children = (
 				4FFD1EFF2A6093870033A127 /* CameraService.swift */,
 				4FFD1F052A60BC990033A127 /* DanceStyle.swift */,
+				4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */,
+				4FFD1F092A611C150033A127 /* ProfileManager.swift */,
+				4FFD1F0B2A611C860033A127 /* Song.swift */,
+				4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +245,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFD1EED2A5F61D50033A127 /* AppViewModel.swift in Sources */,
+				4FFD1F102A611DD90033A127 /* DanceLevel.swift in Sources */,
+				4FFD1F0A2A611C150033A127 /* ProfileManager.swift in Sources */,
 				4FFD1F002A6093870033A127 /* CameraService.swift in Sources */,
 				4FFD1EF32A5F63330033A127 /* ProfileView.swift in Sources */,
 				4FFD1EE42A5E2B370033A127 /* SetupProfileViewModel.swift in Sources */,
@@ -250,10 +264,12 @@
 				4FFD1EE22A5E2B2F0033A127 /* SetupProfileView.swift in Sources */,
 				4FFD1F022A60939F0033A127 /* CameraServiceView.swift in Sources */,
 				4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */,
+				4FFD1F0C2A611C860033A127 /* Song.swift in Sources */,
 				4FFD1F082A60BDAD0033A127 /* ExploreViewModel.swift in Sources */,
 				4FFD1EE72A5E2B7D0033A127 /* AuthenticationTextfieldStyle.swift in Sources */,
 				4FFD1ED02A5E1B080033A127 /* ContentView.swift in Sources */,
 				4FFD1ECE2A5E1B080033A127 /* myDanceJourneyApp.swift in Sources */,
+				4FFD1F0E2A611DC50033A127 /* DanceGoal.swift in Sources */,
 				4FFD1EDD2A5E1C990033A127 /* AuthenticationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

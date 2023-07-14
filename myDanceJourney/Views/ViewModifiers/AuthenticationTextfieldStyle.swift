@@ -23,8 +23,8 @@ struct AuthenticationTextfieldStyle: ViewModifier {
         content
             .font(.system(size: FONT_SIZE))
             .foregroundColor(TEXT_COLOR)
-            .padding()
+            .padding(10)
             .background(TEXTFIELD_COLOR)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }

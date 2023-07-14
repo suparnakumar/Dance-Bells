@@ -12,8 +12,8 @@ struct AuthenticationView: View {
     let BACKGROUND_COLOR: Color = .purple.opacity(0.3)
     let TEXTFIELD_COLOR: Color = .white
     let TEXT_COLOR: Color = .black
-    let FONT_SIZE: CGFloat = 20
-    let BUTTON_FONT_SIZE: CGFloat = 18
+    let FONT_SIZE: CGFloat = 15
+    let BUTTON_FONT_SIZE: CGFloat = 15
     let BUTTON_COLOR: Color = .blue
     let BUTTON_TEXT_COLOR: Color = .white
     
@@ -24,7 +24,7 @@ struct AuthenticationView: View {
             
             // Login | Signup Picker
             Picker("", selection: $viewModel.authenticationState) {
-                ForEach(AuthenticationState.allCases, id: \.self) { item in
+                ForEach(AuthenticationType.allCases, id: \.self) { item in
                     Text(item.rawValue.capitalized)
                 }
             }
