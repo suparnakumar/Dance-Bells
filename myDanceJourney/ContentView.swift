@@ -10,16 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var profile = ProfileManager()
-    @State var isLoggedIn = true
     
     var body: some View {
         
-        if isLoggedIn {
+        if profile.isLoggedIn {
             AppView()
                 .environmentObject(profile)
         } else {
             AuthenticationView()
                 .environmentObject(profile)
+            
         }
     }
 }

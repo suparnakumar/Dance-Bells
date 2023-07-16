@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 class ProfileManager: ObservableObject {
     @Published private(set) var name: String = "John Smith"
@@ -19,12 +19,38 @@ class ProfileManager: ObservableObject {
     @Published private(set) var danceGoal: DanceGoal = .uninitialized
     @Published private(set) var danceLevel: DanceLevel = .uninitialized
     
+    @Published var isLoggedIn: Bool = false
+    
     init() {
-        for i in 1...10 {
-            self.savedSongs.append(Song(songName: "Song \(i)", artistName: "Artist \(i)", formattedSongDuration: "4:30", pictureURL: "", songURL: ""))
-        }
+        guard let _ = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        self.getUpdatedUserData()
+        self.isLoggedIn = true
     }
-
+    
+    func updateProfilePic(_ profilePic: UIImage?) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        guard let profilePic = profilePic else { return }
+        guard let imageData = profilePic.jpegData(compressionQuality: 0.5) else { return }
+        
+        let ref = FirebaseManager.shared.storage.reference(withPath: uid)
+        ref.putData(imageData, metadata: nil, completion: { metadata, err in
+            if let err = err {
+                print("Failed to push image to storage\n\(err)")
+                return
+            }
+            ref.downloadURL(completion: { url, err in
+                if let err = err {
+                    print("Failed to retrieve download URL\n\(err)")
+                    return
+                }
+                guard let url = url?.absoluteString else { return }
+                // Stores download URL into Firebase storage under user's information
+                updateUserInfo(updatedField: "ProfilePicURL", info: url)
+                self.profilePicURL = url
+            })
+        })
+    }
+    
     func updateName(to updatedName: String) {
         self.name = updatedName
     }
@@ -61,5 +87,40 @@ class ProfileManager: ObservableObject {
     
     func updateDanceLevel(to updatedDanceLevel: DanceLevel) {
         self.danceLevel = updatedDanceLevel
+    }
+    
+    func getUpdatedUserData() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        FirebaseManager.shared.firestore.collection("users")
+            .document(uid).getDocument{ snapshot, err in
+                if let err = err {
+                    print("Failed to fetch current user:", err)
+                    return
+                }
+                guard let data = snapshot?.data() else { return }
+                
+                self.name = data["Name"] as? String ?? ""
+                self.username = data["Username"] as? String ?? ""
+                self.profilePicURL = data["ProfilePicURL"] as? String ?? ""
+                self.bio = data["Bio"] as? String ?? ""
+                
+                let savedSongsRawData = data["SavedSongs"] as? [[String: String]] ?? []
+                let preferredDanceStylesRawData = data["PreferredDanceStylesRawData"] as? [String] ?? []
+                let danceGoalRawData = data["DanceGoal"] as? String? ?? ""
+                let danceLevelRawData = data["DanceLevel"] as? String? ?? ""
+                
+            }
+    }
+    
+    func logOut() {
+        do {
+            try FirebaseManager.shared.auth.signOut()
+            self.isLoggedIn = false
+        }
+        catch {
+            print("Failed to log out")
+        }
+        
+        
     }
 }

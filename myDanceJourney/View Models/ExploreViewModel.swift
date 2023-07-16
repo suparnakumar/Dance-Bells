@@ -12,6 +12,7 @@ extension ExploreView {
     
     @MainActor class ViewModel: ObservableObject {
         @Published var selectedGenre: DanceStyle? = nil
+        @Published var searchQuery: String = ""
         
     }
 }

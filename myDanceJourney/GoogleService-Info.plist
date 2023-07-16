@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>599960998651-7mbdu6j8a306ck0valovsqbei6bnthv4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.599960998651-7mbdu6j8a306ck0valovsqbei6bnthv4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBOOuA11xUBoMQe4XD9ONQkLrwIYoyhr4E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>599960998651</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kumar.rohan.DanceBells</string>
+	<key>PROJECT_ID</key>
+	<string>dance-bells</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dance-bells.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:599960998651:ios:7620ae2c9bbda59e73d65e</string>
+</dict>
+</plist>

@@ -11,6 +11,34 @@ struct ExploreView: View {
     
     @StateObject var viewModel = ViewModel()
     
+    private var SearchBar: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 5)
+                .fill(.gray.opacity(0.2))
+            
+            HStack(spacing: 0) {
+                Image(systemName: "magnifyingglass")
+                
+                TextField("Search For Music", text: $viewModel.searchQuery)
+                    .font(.system(size: 14))
+                    .padding(10)
+                    .foregroundColor(.black)
+                
+                if viewModel.searchQuery != "" {
+                    Button {
+                        viewModel.searchQuery = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+            .padding(.horizontal)
+            
+        }
+        .frame(maxHeight: 10)
+    }
+    
     private var GenreChooserScrollView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
@@ -80,8 +108,11 @@ struct ExploreView: View {
     var body: some View {
         VStack {
             
-            GenreChooserScrollView
+            SearchBar
                 .padding(.vertical)
+            
+            GenreChooserScrollView
+                .padding(.bottom)
             
             AllScrollViews
             
@@ -95,5 +126,6 @@ struct ExploreView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
+            .environmentObject(ProfileManager())
     }
 }

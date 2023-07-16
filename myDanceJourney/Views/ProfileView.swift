@@ -19,7 +19,7 @@ struct ProfileView: View {
             Spacer()
             
             Button {
-                
+                withAnimation { viewModel.showLogoutPopup.toggle() }
             } label: {
                 HStack(spacing: 10) {
                     Text(profile.name)
@@ -41,15 +41,17 @@ struct ProfileView: View {
     
     private var ProfilePic: some View {
         ZStack {
-            Circle()
-                .fill(Color(uiColor: .purple))
-                .frame(width: 120)
+            ProfilePicStruct(profile.profilePicURL, radius: 120)
         
-            Image(systemName: "plus.circle.fill")
-                .font(.system(size: 30, weight: .regular))
-                .foregroundColor(Color(uiColor: .purple).opacity(0.6))
-                .background(Circle().fill(.white))
-                .offset(x: 40, y: 40)
+            Button {
+                viewModel.showImagePicker = true
+            } label: {
+                Image(systemName: "plus.circle.fill")
+                    .font(.system(size: 30, weight: .regular))
+                    .foregroundColor(Color(uiColor: .purple).opacity(0.6))
+                    .background(Circle().fill(.white))
+            }
+            .offset(x: 40, y: 40)
 
         }
     }
@@ -82,31 +84,45 @@ struct ProfileView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack {
+            VStack(spacing: 0) {
+                
+                Header
+                    .padding(.bottom)
+                
+                
+                ProfilePic
+                    .padding(.vertical)
+                
+                Text("@\(profile.username)")
+                    .font(.system(size: 18, weight: .medium))
+                
+                Text(profile.bio)
+                    .foregroundColor(.gray)
+                    .font(.system(size: 15, weight: .regular))
+                    .padding()
+                    .padding(.horizontal)
+                
+                
+                Border
+                
+                UserVideos
+                    .padding(.bottom, 2)
+                
+                
+            }
             
-            Header
-                .padding(.bottom)
-            
-            
-            ProfilePic
-                .padding(.vertical)
-            
-            Text("@\(profile.username)")
-                .font(.system(size: 18, weight: .medium))
-            
-            Text(profile.bio)
-                .foregroundColor(.gray)
-                .font(.system(size: 15, weight: .regular))
-                .padding()
-                .padding(.horizontal)
-            
-            
-            Border
-            
-            UserVideos
-                .padding(.bottom, 2)
-            
-            
+            LogoutPopup(showPopup: $viewModel.showLogoutPopup)
+                .environmentObject(profile)
+        }
+        .fullScreenCover(
+            isPresented: $viewModel.showImagePicker,
+            onDismiss: {
+                profile.updateProfilePic(viewModel.newProfilePic)
+                viewModel.showImagePicker = false
+            }
+        ) {
+            ImagePicker(image: $viewModel.newProfilePic)
         }
     }
 }

@@ -9,11 +9,11 @@ import Foundation
 
 class Song: Equatable, Hashable {
 
-    private let songName: String
-    private let artistName: String
-    private let formattedSongDuration: String
-    private let pictureURL: String
-    private let songURL: String
+    let songName: String
+    let artistName: String
+    let formattedSongDuration: String
+    let pictureURL: String
+    let songURL: String
     
     init(songName: String, artistName: String, formattedSongDuration: String, pictureURL: String, songURL: String) {
         self.songName = songName

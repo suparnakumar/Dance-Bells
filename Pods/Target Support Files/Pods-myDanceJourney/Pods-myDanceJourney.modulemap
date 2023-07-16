@@ -1,0 +1,6 @@
+framework module Pods_myDanceJourney {
+  umbrella header "Pods-myDanceJourney-umbrella.h"
+
+  export *
+  module * { export * }
+}

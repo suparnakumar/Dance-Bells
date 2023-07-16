@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FB576E52A63C25A00117296 /* ProfilePicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB576E42A63C25A00117296 /* ProfilePicStruct.swift */; };
+		4FB576E72A63C6D800117296 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB576E62A63C6D800117296 /* ImagePicker.swift */; };
+		4FB576EA2A64504900117296 /* LogoutPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB576E92A64504900117296 /* LogoutPopup.swift */; };
 		4FFD1ECE2A5E1B080033A127 /* myDanceJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1ECD2A5E1B080033A127 /* myDanceJourneyApp.swift */; };
 		4FFD1ED02A5E1B080033A127 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1ECF2A5E1B080033A127 /* ContentView.swift */; };
 		4FFD1ED22A5E1B090033A127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD1ED12A5E1B090033A127 /* Assets.xcassets */; };
@@ -36,9 +39,17 @@
 		4FFD1F0C2A611C860033A127 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0B2A611C860033A127 /* Song.swift */; };
 		4FFD1F0E2A611DC50033A127 /* DanceGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */; };
 		4FFD1F102A611DD90033A127 /* DanceLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */; };
+		4FFD1F142A61F8A80033A127 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F132A61F8A80033A127 /* FirebaseManager.swift */; };
+		4FFD1F162A635AED0033A127 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */; };
+		BBEFBF43F04A2D7FE0FB3C2D /* Pods_myDanceJourney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FCC7B5B41F741E8711C5E14 /* Pods-myDanceJourney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDanceJourney.debug.xcconfig"; path = "Target Support Files/Pods-myDanceJourney/Pods-myDanceJourney.debug.xcconfig"; sourceTree = "<group>"; };
+		38B5B778AE636034D4F02D41 /* Pods-myDanceJourney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDanceJourney.release.xcconfig"; path = "Target Support Files/Pods-myDanceJourney/Pods-myDanceJourney.release.xcconfig"; sourceTree = "<group>"; };
+		4FB576E42A63C25A00117296 /* ProfilePicStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicStruct.swift; sourceTree = "<group>"; };
+		4FB576E62A63C6D800117296 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4FB576E92A64504900117296 /* LogoutPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopup.swift; sourceTree = "<group>"; };
 		4FFD1ECA2A5E1B080033A127 /* myDanceJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDanceJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFD1ECD2A5E1B080033A127 /* myDanceJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDanceJourneyApp.swift; sourceTree = "<group>"; };
 		4FFD1ECF2A5E1B080033A127 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +80,9 @@
 		4FFD1F0B2A611C860033A127 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceGoal.swift; sourceTree = "<group>"; };
 		4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceLevel.swift; sourceTree = "<group>"; };
+		4FFD1F132A61F8A80033A127 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDanceJourney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +90,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBEFBF43F04A2D7FE0FB3C2D /* Pods_myDanceJourney.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FB576E82A64502700117296 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				4FFD1F012A60939F0033A127 /* CameraServiceView.swift */,
+				4FB576E42A63C25A00117296 /* ProfilePicStruct.swift */,
+				4FB576E92A64504900117296 /* LogoutPopup.swift */,
+				4FB576E62A63C6D800117296 /* ImagePicker.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		4FFD1EC12A5E1B080033A127 = {
 			isa = PBXGroup;
 			children = (
 				4FFD1ECC2A5E1B080033A127 /* myDanceJourney */,
 				4FFD1ECB2A5E1B080033A127 /* Products */,
+				6F5E7D1FBC1E2F1FFAD7B060 /* Pods */,
+				F9E19007C578EE5FD10117E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +129,7 @@
 		4FFD1ECC2A5E1B080033A127 /* myDanceJourney */ = {
 			isa = PBXGroup;
 			children = (
+				4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */,
 				4FFD1ECD2A5E1B080033A127 /* myDanceJourneyApp.swift */,
 				4FFD1ECF2A5E1B080033A127 /* ContentView.swift */,
 				4FFD1EFE2A60937B0033A127 /* Models */,
@@ -129,9 +158,9 @@
 				4FFD1EF22A5F63330033A127 /* ProfileView.swift */,
 				4FFD1EF42A5F63390033A127 /* ExploreView.swift */,
 				4FFD1EF62A5F63520033A127 /* CameraView.swift */,
-				4FFD1F012A60939F0033A127 /* CameraServiceView.swift */,
 				4FFD1EEE2A5F62DC0033A127 /* HomeView.swift */,
 				4FFD1EE12A5E2B2F0033A127 /* SetupProfileView.swift */,
+				4FB576E82A64502700117296 /* Structs */,
 				4FFD1EE52A5E2B5D0033A127 /* ViewModifiers */,
 			);
 			path = Views;
@@ -168,10 +197,28 @@
 				4FFD1F052A60BC990033A127 /* DanceStyle.swift */,
 				4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */,
 				4FFD1F092A611C150033A127 /* ProfileManager.swift */,
+				4FFD1F132A61F8A80033A127 /* FirebaseManager.swift */,
 				4FFD1F0B2A611C860033A127 /* Song.swift */,
 				4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6F5E7D1FBC1E2F1FFAD7B060 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FCC7B5B41F741E8711C5E14 /* Pods-myDanceJourney.debug.xcconfig */,
+				38B5B778AE636034D4F02D41 /* Pods-myDanceJourney.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F9E19007C578EE5FD10117E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FFD1ED82A5E1B090033A127 /* Build configuration list for PBXNativeTarget "myDanceJourney" */;
 			buildPhases = (
+				E4269E9DA74251345AA0722A /* [CP] Check Pods Manifest.lock */,
 				4FFD1EC62A5E1B080033A127 /* Sources */,
 				4FFD1EC72A5E1B080033A127 /* Frameworks */,
 				4FFD1EC82A5E1B080033A127 /* Resources */,
+				24D8B8F16CDBAA0BB0BA3BAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,10 +283,53 @@
 			files = (
 				4FFD1ED52A5E1B090033A127 /* Preview Assets.xcassets in Resources */,
 				4FFD1ED22A5E1B090033A127 /* Assets.xcassets in Resources */,
+				4FFD1F162A635AED0033A127 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24D8B8F16CDBAA0BB0BA3BAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myDanceJourney/Pods-myDanceJourney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myDanceJourney/Pods-myDanceJourney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myDanceJourney/Pods-myDanceJourney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4269E9DA74251345AA0722A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myDanceJourney-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4FFD1EC62A5E1B080033A127 /* Sources */ = {
@@ -257,18 +349,22 @@
 				4FFD1EF12A5F631D0033A127 /* SavedMusicView.swift in Sources */,
 				4FFD1EE92A5E2BA40033A127 /* AuthenticationButtonStyle.swift in Sources */,
 				4FFD1EEB2A5F61C80033A127 /* AppView.swift in Sources */,
+				4FB576E52A63C25A00117296 /* ProfilePicStruct.swift in Sources */,
 				4FFD1EE02A5E1D6A0033A127 /* AuthenticationViewModel.swift in Sources */,
 				4FFD1EFB2A5FE7510033A127 /* SavedMusicViewModel.swift in Sources */,
 				4FFD1EF52A5F63390033A127 /* ExploreView.swift in Sources */,
+				4FFD1F142A61F8A80033A127 /* FirebaseManager.swift in Sources */,
 				4FFD1EEF2A5F62DC0033A127 /* HomeView.swift in Sources */,
 				4FFD1EE22A5E2B2F0033A127 /* SetupProfileView.swift in Sources */,
 				4FFD1F022A60939F0033A127 /* CameraServiceView.swift in Sources */,
+				4FB576EA2A64504900117296 /* LogoutPopup.swift in Sources */,
 				4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */,
 				4FFD1F0C2A611C860033A127 /* Song.swift in Sources */,
 				4FFD1F082A60BDAD0033A127 /* ExploreViewModel.swift in Sources */,
 				4FFD1EE72A5E2B7D0033A127 /* AuthenticationTextfieldStyle.swift in Sources */,
 				4FFD1ED02A5E1B080033A127 /* ContentView.swift in Sources */,
 				4FFD1ECE2A5E1B080033A127 /* myDanceJourneyApp.swift in Sources */,
+				4FB576E72A63C6D800117296 /* ImagePicker.swift in Sources */,
 				4FFD1F0E2A611DC50033A127 /* DanceGoal.swift in Sources */,
 				4FFD1EDD2A5E1C990033A127 /* AuthenticationView.swift in Sources */,
 			);
@@ -327,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -381,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -393,6 +489,7 @@
 		};
 		4FFD1ED92A5E1B090033A127 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FCC7B5B41F741E8711C5E14 /* Pods-myDanceJourney.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -406,6 +503,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -414,7 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kumar.rohan.myDanceJourney;
+				PRODUCT_BUNDLE_IDENTIFIER = kumar.rohan.DanceBells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,6 +523,7 @@
 		};
 		4FFD1EDA2A5E1B090033A127 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38B5B778AE636034D4F02D41 /* Pods-myDanceJourney.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -437,6 +537,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -445,7 +547,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kumar.rohan.myDanceJourney;
+				PRODUCT_BUNDLE_IDENTIFIER = kumar.rohan.DanceBells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
