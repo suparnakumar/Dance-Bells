@@ -89,7 +89,7 @@ struct ExploreView: View {
             
             VStack(alignment: .leading) {
                 
-                let titles = ["Trending", "Recommendations for You", "Pop", "Hip Hop", "Bollywood"]
+                let titles = ["Trending", "Recommendations for \(SpotifyManager.shared.profile.spotifyDisplayName)", "Pop", "Hip Hop", "Bollywood"]
                 
                 ForEach(titles, id: \.self) { title in
                     

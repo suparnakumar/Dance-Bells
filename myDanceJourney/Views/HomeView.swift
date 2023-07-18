@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
     private var Header: some View {
@@ -88,15 +88,22 @@ struct HomeView: View {
             }
             
             
+            Button("Connect to Spotify") {
+                SpotifyManager.shared.requestAuthorization()
+            }
+            .foregroundColor(.black)
+            
+            
             Spacer()
             
-            
         }
+        
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
+            .environmentObject(ProfileManager())
     }
 }

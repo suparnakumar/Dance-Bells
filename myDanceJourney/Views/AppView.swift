@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct AppView: View {
-    
     @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     

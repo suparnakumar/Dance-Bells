@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var profile = ProfileManager()
-    
+    @StateObject var profile = ProfileManager()    
     var body: some View {
         
         if profile.isLoggedIn {
