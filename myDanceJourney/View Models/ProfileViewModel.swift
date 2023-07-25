@@ -9,7 +9,7 @@ import SwiftUI
 
 extension ProfileView {
     
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor final class ViewModel: ObservableObject {
         @Published var newProfilePic: UIImage? = nil
         @Published var showImagePicker: Bool = false
         @Published var showLogoutPopup: Bool = false

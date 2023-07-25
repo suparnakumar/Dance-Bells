@@ -20,6 +20,29 @@ struct AuthenticationView: View {
     @StateObject var viewModel = ViewModel()
     @EnvironmentObject var profile: ProfileManager
     
+    var body: some View {
+        VStack {
+            
+            AuthenticationStatePicker
+            
+            AllTextfields
+            
+            SubmitButton
+            
+            FeedbackText
+            
+            if viewModel.isLoading {
+                ProgressView()
+            }
+            
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(BACKGROUND_COLOR)
+        .ignoresSafeArea()
+        
+    }
+    
     private var AuthenticationStatePicker: some View {
         Picker("", selection: $viewModel.authenticationState) {
             ForEach(AuthenticationType.allCases, id: \.self) { item in
@@ -65,29 +88,6 @@ struct AuthenticationView: View {
         Text(viewModel.feedbackText)
             .font(.system(size: 11, weight: .light))
             .foregroundColor(.red)
-    }
-    
-    var body: some View {
-        VStack {
-            
-            AuthenticationStatePicker
-            
-            AllTextfields
-            
-            SubmitButton
-            
-            FeedbackText
-            
-            if viewModel.isLoading {
-                ProgressView()
-            }
-            
-        }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(BACKGROUND_COLOR)
-        .ignoresSafeArea()
-        
     }
 }
 

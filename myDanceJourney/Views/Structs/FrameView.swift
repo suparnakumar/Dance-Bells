@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-struct CameraServiceView: UIViewControllerRepresentable {
+struct FrameView: UIViewControllerRepresentable {
     typealias UIViewControllerType = UIViewController
     
     let cameraService: CameraService
@@ -38,10 +38,10 @@ struct CameraServiceView: UIViewControllerRepresentable {
     }
     
     class Coordinator: NSObject, AVCapturePhotoCaptureDelegate {
-        let parent: CameraServiceView
+        let parent: FrameView
         private var didFinishProcessingPhoto: (Result<AVCapturePhoto, Error>) -> ()
         
-        init(parent: CameraServiceView, didFinishProcessingPhoto: @escaping (Result<AVCapturePhoto, Error>) -> ()) {
+        init(parent: FrameView, didFinishProcessingPhoto: @escaping (Result<AVCapturePhoto, Error>) -> ()) {
             self.parent = parent
             self.didFinishProcessingPhoto = didFinishProcessingPhoto
         }

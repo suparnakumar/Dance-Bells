@@ -11,6 +11,23 @@ struct ExploreView: View {
     
     @StateObject var viewModel = ViewModel()
     
+    var body: some View {
+        VStack {
+            
+            SearchBar
+                .padding(.vertical)
+            
+            GenreChooserScrollView
+                .padding(.bottom)
+            
+            AllScrollViews
+            
+            Spacer()
+            
+        }
+        .padding(.horizontal)
+    }
+    
     private var SearchBar: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 5)
@@ -102,24 +119,6 @@ struct ExploreView: View {
                 }
             }
         }
-    }
-    
-    
-    var body: some View {
-        VStack {
-            
-            SearchBar
-                .padding(.vertical)
-            
-            GenreChooserScrollView
-                .padding(.bottom)
-            
-            AllScrollViews
-            
-            Spacer()
-            
-        }
-        .padding(.horizontal)
     }
 }
 

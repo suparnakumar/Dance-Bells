@@ -36,7 +36,7 @@ extension AuthenticationView {
         return returnMessage
     }
     
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor final class ViewModel: ObservableObject {
         @Published var authenticationState: AuthenticationType = .login
         @Published var fullName: String = ""
         @Published var username: String = ""

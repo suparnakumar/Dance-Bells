@@ -9,7 +9,7 @@ import SwiftUI
 
 extension SavedMusicView {
     
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor final class ViewModel: ObservableObject {
         
         @Published var searchQuery: String = ""
         @Published var currentSongPlaying: Song? = nil

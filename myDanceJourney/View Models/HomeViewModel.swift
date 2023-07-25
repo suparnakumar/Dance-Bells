@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension HomeView {
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor final class ViewModel: ObservableObject {
         @Published private(set) var showSearchBar: Bool = false
         @Published var searchQuery: String = ""
         

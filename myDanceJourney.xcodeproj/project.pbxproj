@@ -19,8 +19,6 @@
 		4FFD1ED52A5E1B090033A127 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD1ED42A5E1B090033A127 /* Preview Assets.xcassets */; };
 		4FFD1EDD2A5E1C990033A127 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EDC2A5E1C990033A127 /* AuthenticationView.swift */; };
 		4FFD1EE02A5E1D6A0033A127 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EDF2A5E1D6A0033A127 /* AuthenticationViewModel.swift */; };
-		4FFD1EE22A5E2B2F0033A127 /* SetupProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EE12A5E2B2F0033A127 /* SetupProfileView.swift */; };
-		4FFD1EE42A5E2B370033A127 /* SetupProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EE32A5E2B370033A127 /* SetupProfileViewModel.swift */; };
 		4FFD1EE72A5E2B7D0033A127 /* AuthenticationTextfieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EE62A5E2B7C0033A127 /* AuthenticationTextfieldStyle.swift */; };
 		4FFD1EE92A5E2BA40033A127 /* AuthenticationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EE82A5E2BA40033A127 /* AuthenticationButtonStyle.swift */; };
 		4FFD1EEB2A5F61C80033A127 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EEA2A5F61C80033A127 /* AppView.swift */; };
@@ -34,7 +32,7 @@
 		4FFD1EFB2A5FE7510033A127 /* SavedMusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EFA2A5FE7510033A127 /* SavedMusicViewModel.swift */; };
 		4FFD1EFD2A607A580033A127 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EFC2A607A580033A127 /* CameraViewModel.swift */; };
 		4FFD1F002A6093870033A127 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EFF2A6093870033A127 /* CameraService.swift */; };
-		4FFD1F022A60939F0033A127 /* CameraServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F012A60939F0033A127 /* CameraServiceView.swift */; };
+		4FFD1F022A60939F0033A127 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F012A60939F0033A127 /* FrameView.swift */; };
 		4FFD1F042A60B5440033A127 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */; };
 		4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F052A60BC990033A127 /* DanceStyle.swift */; };
 		4FFD1F082A60BDAD0033A127 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F072A60BDAD0033A127 /* ExploreViewModel.swift */; };
@@ -65,8 +63,6 @@
 		4FFD1ED42A5E1B090033A127 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4FFD1EDC2A5E1C990033A127 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		4FFD1EDF2A5E1D6A0033A127 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
-		4FFD1EE12A5E2B2F0033A127 /* SetupProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileView.swift; sourceTree = "<group>"; };
-		4FFD1EE32A5E2B370033A127 /* SetupProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewModel.swift; sourceTree = "<group>"; };
 		4FFD1EE62A5E2B7C0033A127 /* AuthenticationTextfieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextfieldStyle.swift; sourceTree = "<group>"; };
 		4FFD1EE82A5E2BA40033A127 /* AuthenticationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButtonStyle.swift; sourceTree = "<group>"; };
 		4FFD1EEA2A5F61C80033A127 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -80,7 +76,7 @@
 		4FFD1EFA2A5FE7510033A127 /* SavedMusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMusicViewModel.swift; sourceTree = "<group>"; };
 		4FFD1EFC2A607A580033A127 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		4FFD1EFF2A6093870033A127 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
-		4FFD1F012A60939F0033A127 /* CameraServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraServiceView.swift; sourceTree = "<group>"; };
+		4FFD1F012A60939F0033A127 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4FFD1F052A60BC990033A127 /* DanceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceStyle.swift; sourceTree = "<group>"; };
 		4FFD1F072A60BDAD0033A127 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
@@ -112,7 +108,7 @@
 		4FB576E82A64502700117296 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD1F012A60939F0033A127 /* CameraServiceView.swift */,
+				4FFD1F012A60939F0033A127 /* FrameView.swift */,
 				4FB576E42A63C25A00117296 /* ProfilePicStruct.swift */,
 				4FB576E92A64504900117296 /* LogoutPopup.swift */,
 				4FB576E62A63C6D800117296 /* ImagePicker.swift */,
@@ -171,7 +167,6 @@
 				4FFD1EF42A5F63390033A127 /* ExploreView.swift */,
 				4FFD1EF62A5F63520033A127 /* CameraView.swift */,
 				4FFD1EEE2A5F62DC0033A127 /* HomeView.swift */,
-				4FFD1EE12A5E2B2F0033A127 /* SetupProfileView.swift */,
 				CD60EFD52A686395004FCF6C /* WelcomeView.swift */,
 				4FB576E82A64502700117296 /* Structs */,
 				4FFD1EE52A5E2B5D0033A127 /* ViewModifiers */,
@@ -183,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				4FFD1EDF2A5E1D6A0033A127 /* AuthenticationViewModel.swift */,
-				4FFD1EE32A5E2B370033A127 /* SetupProfileViewModel.swift */,
 				4FFD1EEC2A5F61D50033A127 /* AppViewModel.swift */,
 				4FFD1EFA2A5FE7510033A127 /* SavedMusicViewModel.swift */,
 				4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */,
@@ -366,7 +360,6 @@
 				4FB576FF2A66305000117296 /* SpotifyProfile.swift in Sources */,
 				4FFD1F002A6093870033A127 /* CameraService.swift in Sources */,
 				4FFD1EF32A5F63330033A127 /* ProfileView.swift in Sources */,
-				4FFD1EE42A5E2B370033A127 /* SetupProfileViewModel.swift in Sources */,
 				4FFD1EF92A5FDF800033A127 /* HomeViewModel.swift in Sources */,
 				CD60EFD62A686395004FCF6C /* WelcomeView.swift in Sources */,
 				4FFD1EF72A5F63520033A127 /* CameraView.swift in Sources */,
@@ -382,8 +375,7 @@
 				4FFD1EF52A5F63390033A127 /* ExploreView.swift in Sources */,
 				4FFD1F142A61F8A80033A127 /* FirebaseManager.swift in Sources */,
 				4FFD1EEF2A5F62DC0033A127 /* HomeView.swift in Sources */,
-				4FFD1EE22A5E2B2F0033A127 /* SetupProfileView.swift in Sources */,
-				4FFD1F022A60939F0033A127 /* CameraServiceView.swift in Sources */,
+				4FFD1F022A60939F0033A127 /* FrameView.swift in Sources */,
 				4FB576EA2A64504900117296 /* LogoutPopup.swift in Sources */,
 				4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */,
 				4FFD1F0C2A611C860033A127 /* Song.swift in Sources */,

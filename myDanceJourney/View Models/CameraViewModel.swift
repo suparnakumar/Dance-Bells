@@ -16,35 +16,50 @@ extension CameraView {
         case threeMin = "3min"
         case fiveMin = "5min"
         
-        func getName() -> String {
-            return self.rawValue
-        }
+        var name: String { self.rawValue }
         
-        func getDurationInSeconds() -> Int {
-            let getDuration: [RecordLength: Int] = [
-                .fifteenSeconds: 15,
-                .thirtySeconds: 30,
-                .oneMin: 60,
-                .threeMin: 180,
-                .fiveMin: 300
-            ]
-            
-            return getDuration[self] ?? 60
+        var durationInSeconds: Int {
+            switch self {
+            case .fifteenSeconds:
+                return 15
+            case .thirtySeconds:
+                return 30
+            case .oneMin:
+                return 60
+            case .threeMin:
+                return 180
+            case .fiveMin:
+                return 300
+            }
         }
     }
     
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor final class ViewModel: ObservableObject {
         @Published private(set) var isRecording: Bool = false
+        @Published private var recordedURLs: [URL] = []
+        @Published private(set) var previewURL: URL?
+        @Published private(set) var showPreview: Bool = false
+        @Published private var output = AVCaptureMovieFileOutput()
+        
         @Published private(set) var displayRightSideDropdown: Bool = false
-        @Published var numSecondsDelay: Int = 0
         @Published var recordingLength: RecordLength = .oneMin
-        @Published private(set) var didInvertCameraLeftRight: Bool = false
+        
+        @Published var numSecondsDelay: Int = 0
+        
+        @Published private(set) var showMirrorImage: Bool = false
         @Published private(set) var displayFrontFacingCamera: Bool = false
         @Published private(set) var useFlash: Bool = false
         @Published var speedRatio: CGFloat = 1
         
-        func invertCameraLeftRight() {
-            withAnimation { self.didInvertCameraLeftRight.toggle() }
+        private func startRecording() {
+            let tempURL = NSTemporaryDirectory() + "\(Date()).mov"
+            
+        }
+        
+        let cameraService = CameraService()
+        
+        func toggleMirroredImage() {
+            withAnimation { self.showMirrorImage.toggle() }
         }
         
         func invertCamera() {

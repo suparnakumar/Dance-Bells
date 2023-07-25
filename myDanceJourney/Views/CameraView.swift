@@ -11,7 +11,6 @@ struct CameraView: View {
     
     @StateObject var viewModel = ViewModel()
     @Binding var showCamera: Bool
-    let cameraService = CameraService()
     
     @Environment(\.presentationMode) private var presentationMode
     
@@ -21,6 +20,29 @@ struct CameraView: View {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.init(white: 1, alpha: 0.2)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+    }
+    
+    var body: some View {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            
+            FrameView(cameraService: viewModel.cameraService) { result in
+                switch result {
+                case .success(let photo):
+                    if let photoData = photo.fileDataRepresentation() {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } else {
+                        print("Error: No Image Data Found")
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            .ignoresSafeArea()
+            
+            
+            OverlayButtons
+        }
     }
     
     private var RecordButton: some View {
@@ -58,7 +80,7 @@ struct CameraView: View {
     private var RecordLengthPicker: some View {
         Picker("", selection: $viewModel.recordingLength) {
             ForEach(RecordLength.allCases, id: \.self) { item in
-                Text(item.getName())
+                Text(item.name)
             }
         }
         .pickerStyle(SegmentedPickerStyle())
@@ -84,7 +106,7 @@ struct CameraView: View {
             }
             
             Button {
-                viewModel.invertCameraLeftRight()
+                viewModel.toggleMirroredImage()
             } label: {
                 Image(systemName: "arrow.right.and.line.vertical.and.arrow.left")
                     .padding(.bottom, 25)
@@ -139,30 +161,6 @@ struct CameraView: View {
             RecordButton
             
             
-        }
-    }
-    
-    
-    var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            
-            CameraServiceView(cameraService: self.cameraService) { result in
-                switch result {
-                case .success(let photo):
-                    if let photoData = photo.fileDataRepresentation() {
-                        self.presentationMode.wrappedValue.dismiss()
-                    } else {
-                        print("Error: No Image Data Found")
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-            .ignoresSafeArea()
-            
-            
-            OverlayButtons
         }
     }
 }

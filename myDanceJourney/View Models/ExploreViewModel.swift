@@ -10,7 +10,7 @@ import Foundation
 
 extension ExploreView {
     
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor final class ViewModel: ObservableObject {
         @Published var selectedGenre: DanceStyle? = nil
         @Published var searchQuery: String = ""
         

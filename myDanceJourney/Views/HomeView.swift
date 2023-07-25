@@ -11,6 +11,30 @@ struct HomeView: View {
     @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
+    var body: some View {
+        VStack {
+            
+            ZStack {
+                SearchBar.padding()
+                    .offset(x: viewModel.showSearchBar ? 0 : 500)
+                
+                Header
+                    .offset(x: viewModel.showSearchBar ? -500 : 0)
+            }
+            
+            
+            Button("Connect to Spotify") {
+                SpotifyManager.shared.requestAuthorization()
+            }
+            .foregroundColor(.black)
+            
+            
+            Spacer()
+            
+        }
+        
+    }
+    
     private var Header: some View {
         HStack {
             Image(systemName: "line.3.horizontal")
@@ -75,30 +99,6 @@ struct HomeView: View {
         .frame(maxHeight: 10)
     }
         
-    
-    var body: some View {
-        VStack {
-            
-            ZStack {
-                SearchBar.padding()
-                    .offset(x: viewModel.showSearchBar ? 0 : 500)
-                
-                Header
-                    .offset(x: viewModel.showSearchBar ? -500 : 0)
-            }
-            
-            
-            Button("Connect to Spotify") {
-                SpotifyManager.shared.requestAuthorization()
-            }
-            .foregroundColor(.black)
-            
-            
-            Spacer()
-            
-        }
-        
-    }
 }
 
 struct HomeView_Previews: PreviewProvider {

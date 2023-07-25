@@ -17,7 +17,7 @@ extension AppView {
         case profile
     }
     
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor final class ViewModel: ObservableObject {
         @Published var tab: Tab = .home
         @Published var showCamera: Bool = false
     }
