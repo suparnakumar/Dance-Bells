@@ -13,6 +13,9 @@
 		4FB576FB2A66178100117296 /* SpotifyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4FB576FA2A66178100117296 /* SpotifyAPI */; };
 		4FB576FD2A66178B00117296 /* SpotifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB576FC2A66178B00117296 /* SpotifyManager.swift */; };
 		4FB576FF2A66305000117296 /* SpotifyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB576FE2A66305000117296 /* SpotifyProfile.swift */; };
+		4FF5DC3B2A70635E007E9F56 /* SwiftUICam in Frameworks */ = {isa = PBXBuildFile; productRef = 4FF5DC3A2A70635E007E9F56 /* SwiftUICam */; };
+		4FF5DC3D2A708A46007E9F56 /* CameraProductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF5DC3C2A708A46007E9F56 /* CameraProductionView.swift */; };
+		4FF5DC3F2A708EF6007E9F56 /* CameraButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF5DC3E2A708EF6007E9F56 /* CameraButtonStyle.swift */; };
 		4FFD1ECE2A5E1B080033A127 /* myDanceJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1ECD2A5E1B080033A127 /* myDanceJourneyApp.swift */; };
 		4FFD1ED02A5E1B080033A127 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1ECF2A5E1B080033A127 /* ContentView.swift */; };
 		4FFD1ED22A5E1B090033A127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD1ED12A5E1B090033A127 /* Assets.xcassets */; };
@@ -27,23 +30,17 @@
 		4FFD1EF12A5F631D0033A127 /* SavedMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EF02A5F631D0033A127 /* SavedMusicView.swift */; };
 		4FFD1EF32A5F63330033A127 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EF22A5F63330033A127 /* ProfileView.swift */; };
 		4FFD1EF52A5F63390033A127 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EF42A5F63390033A127 /* ExploreView.swift */; };
-		4FFD1EF72A5F63520033A127 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EF62A5F63520033A127 /* CameraView.swift */; };
 		4FFD1EF92A5FDF800033A127 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EF82A5FDF800033A127 /* HomeViewModel.swift */; };
 		4FFD1EFB2A5FE7510033A127 /* SavedMusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EFA2A5FE7510033A127 /* SavedMusicViewModel.swift */; };
-		4FFD1EFD2A607A580033A127 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EFC2A607A580033A127 /* CameraViewModel.swift */; };
-		4FFD1F002A6093870033A127 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EFF2A6093870033A127 /* CameraService.swift */; };
-		4FFD1F022A60939F0033A127 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F012A60939F0033A127 /* FrameView.swift */; };
+		4FFD1EFD2A607A580033A127 /* CameraProductionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1EFC2A607A580033A127 /* CameraProductionViewModel.swift */; };
 		4FFD1F042A60B5440033A127 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */; };
 		4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F052A60BC990033A127 /* DanceStyle.swift */; };
 		4FFD1F082A60BDAD0033A127 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F072A60BDAD0033A127 /* ExploreViewModel.swift */; };
 		4FFD1F0A2A611C150033A127 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F092A611C150033A127 /* ProfileManager.swift */; };
 		4FFD1F0C2A611C860033A127 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0B2A611C860033A127 /* Song.swift */; };
-		4FFD1F0E2A611DC50033A127 /* DanceGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */; };
-		4FFD1F102A611DD90033A127 /* DanceLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */; };
 		4FFD1F142A61F8A80033A127 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD1F132A61F8A80033A127 /* FirebaseManager.swift */; };
 		4FFD1F162A635AED0033A127 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */; };
 		BBEFBF43F04A2D7FE0FB3C2D /* Pods_myDanceJourney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */; };
-		CD60EFCE2A67EEDE004FCF6C /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFCD2A67EEDE004FCF6C /* Welcome.swift */; };
 		CD60EFD22A67FC69004FCF6C /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFD12A67FC69004FCF6C /* WelcomeViewModel.swift */; };
 		CD60EFD62A686395004FCF6C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFD52A686395004FCF6C /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +53,8 @@
 		4FB576E92A64504900117296 /* LogoutPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopup.swift; sourceTree = "<group>"; };
 		4FB576FC2A66178B00117296 /* SpotifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyManager.swift; sourceTree = "<group>"; };
 		4FB576FE2A66305000117296 /* SpotifyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyProfile.swift; sourceTree = "<group>"; };
+		4FF5DC3C2A708A46007E9F56 /* CameraProductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraProductionView.swift; sourceTree = "<group>"; };
+		4FF5DC3E2A708EF6007E9F56 /* CameraButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonStyle.swift; sourceTree = "<group>"; };
 		4FFD1ECA2A5E1B080033A127 /* myDanceJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDanceJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFD1ECD2A5E1B080033A127 /* myDanceJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDanceJourneyApp.swift; sourceTree = "<group>"; };
 		4FFD1ECF2A5E1B080033A127 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,22 +70,16 @@
 		4FFD1EF02A5F631D0033A127 /* SavedMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMusicView.swift; sourceTree = "<group>"; };
 		4FFD1EF22A5F63330033A127 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4FFD1EF42A5F63390033A127 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
-		4FFD1EF62A5F63520033A127 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4FFD1EF82A5FDF800033A127 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4FFD1EFA2A5FE7510033A127 /* SavedMusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMusicViewModel.swift; sourceTree = "<group>"; };
-		4FFD1EFC2A607A580033A127 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
-		4FFD1EFF2A6093870033A127 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
-		4FFD1F012A60939F0033A127 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		4FFD1EFC2A607A580033A127 /* CameraProductionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraProductionViewModel.swift; sourceTree = "<group>"; };
 		4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4FFD1F052A60BC990033A127 /* DanceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceStyle.swift; sourceTree = "<group>"; };
 		4FFD1F072A60BDAD0033A127 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		4FFD1F092A611C150033A127 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		4FFD1F0B2A611C860033A127 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
-		4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceGoal.swift; sourceTree = "<group>"; };
-		4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanceLevel.swift; sourceTree = "<group>"; };
 		4FFD1F132A61F8A80033A127 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CD60EFCD2A67EEDE004FCF6C /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		CD60EFD12A67FC69004FCF6C /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		CD60EFD52A686395004FCF6C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDanceJourney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +92,7 @@
 			files = (
 				4FB576FB2A66178100117296 /* SpotifyAPI in Frameworks */,
 				BBEFBF43F04A2D7FE0FB3C2D /* Pods_myDanceJourney.framework in Frameworks */,
+				4FF5DC3B2A70635E007E9F56 /* SwiftUICam in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +102,6 @@
 		4FB576E82A64502700117296 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD1F012A60939F0033A127 /* FrameView.swift */,
 				4FB576E42A63C25A00117296 /* ProfilePicStruct.swift */,
 				4FB576E92A64504900117296 /* LogoutPopup.swift */,
 				4FB576E62A63C6D800117296 /* ImagePicker.swift */,
@@ -165,9 +158,9 @@
 				4FFD1EF02A5F631D0033A127 /* SavedMusicView.swift */,
 				4FFD1EF22A5F63330033A127 /* ProfileView.swift */,
 				4FFD1EF42A5F63390033A127 /* ExploreView.swift */,
-				4FFD1EF62A5F63520033A127 /* CameraView.swift */,
 				4FFD1EEE2A5F62DC0033A127 /* HomeView.swift */,
 				CD60EFD52A686395004FCF6C /* WelcomeView.swift */,
+				4FF5DC3C2A708A46007E9F56 /* CameraProductionView.swift */,
 				4FB576E82A64502700117296 /* Structs */,
 				4FFD1EE52A5E2B5D0033A127 /* ViewModifiers */,
 			);
@@ -183,7 +176,7 @@
 				4FFD1F032A60B5440033A127 /* ProfileViewModel.swift */,
 				4FFD1F072A60BDAD0033A127 /* ExploreViewModel.swift */,
 				4FFD1EF82A5FDF800033A127 /* HomeViewModel.swift */,
-				4FFD1EFC2A607A580033A127 /* CameraViewModel.swift */,
+				4FFD1EFC2A607A580033A127 /* CameraProductionViewModel.swift */,
 				CD60EFD12A67FC69004FCF6C /* WelcomeViewModel.swift */,
 			);
 			path = "View Models";
@@ -194,6 +187,7 @@
 			children = (
 				4FFD1EE62A5E2B7C0033A127 /* AuthenticationTextfieldStyle.swift */,
 				4FFD1EE82A5E2BA40033A127 /* AuthenticationButtonStyle.swift */,
+				4FF5DC3E2A708EF6007E9F56 /* CameraButtonStyle.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -201,16 +195,12 @@
 		4FFD1EFE2A60937B0033A127 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD1EFF2A6093870033A127 /* CameraService.swift */,
 				4FFD1F052A60BC990033A127 /* DanceStyle.swift */,
-				4FFD1F0F2A611DD90033A127 /* DanceLevel.swift */,
 				4FFD1F092A611C150033A127 /* ProfileManager.swift */,
 				4FB576FC2A66178B00117296 /* SpotifyManager.swift */,
 				4FB576FE2A66305000117296 /* SpotifyProfile.swift */,
 				4FFD1F132A61F8A80033A127 /* FirebaseManager.swift */,
 				4FFD1F0B2A611C860033A127 /* Song.swift */,
-				4FFD1F0D2A611DC50033A127 /* DanceGoal.swift */,
-				CD60EFCD2A67EEDE004FCF6C /* Welcome.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +242,7 @@
 			name = myDanceJourney;
 			packageProductDependencies = (
 				4FB576FA2A66178100117296 /* SpotifyAPI */,
+				4FF5DC3A2A70635E007E9F56 /* SwiftUICam */,
 			);
 			productName = myDanceJourney;
 			productReference = 4FFD1ECA2A5E1B080033A127 /* myDanceJourney.app */;
@@ -284,6 +275,7 @@
 			mainGroup = 4FFD1EC12A5E1B080033A127;
 			packageReferences = (
 				4FB576F92A66178100117296 /* XCRemoteSwiftPackageReference "SpotifyAPI" */,
+				4FF5DC392A70635E007E9F56 /* XCRemoteSwiftPackageReference "SwiftUICam" */,
 			);
 			productRefGroup = 4FFD1ECB2A5E1B080033A127 /* Products */;
 			projectDirPath = "";
@@ -355,38 +347,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFD1EED2A5F61D50033A127 /* AppViewModel.swift in Sources */,
-				4FFD1F102A611DD90033A127 /* DanceLevel.swift in Sources */,
 				4FFD1F0A2A611C150033A127 /* ProfileManager.swift in Sources */,
 				4FB576FF2A66305000117296 /* SpotifyProfile.swift in Sources */,
-				4FFD1F002A6093870033A127 /* CameraService.swift in Sources */,
 				4FFD1EF32A5F63330033A127 /* ProfileView.swift in Sources */,
 				4FFD1EF92A5FDF800033A127 /* HomeViewModel.swift in Sources */,
 				CD60EFD62A686395004FCF6C /* WelcomeView.swift in Sources */,
-				4FFD1EF72A5F63520033A127 /* CameraView.swift in Sources */,
 				4FFD1F042A60B5440033A127 /* ProfileViewModel.swift in Sources */,
-				4FFD1EFD2A607A580033A127 /* CameraViewModel.swift in Sources */,
+				4FFD1EFD2A607A580033A127 /* CameraProductionViewModel.swift in Sources */,
 				4FFD1EF12A5F631D0033A127 /* SavedMusicView.swift in Sources */,
 				4FFD1EE92A5E2BA40033A127 /* AuthenticationButtonStyle.swift in Sources */,
 				4FFD1EEB2A5F61C80033A127 /* AppView.swift in Sources */,
+				4FF5DC3D2A708A46007E9F56 /* CameraProductionView.swift in Sources */,
 				4FB576E52A63C25A00117296 /* ProfilePicStruct.swift in Sources */,
 				4FFD1EE02A5E1D6A0033A127 /* AuthenticationViewModel.swift in Sources */,
 				4FFD1EFB2A5FE7510033A127 /* SavedMusicViewModel.swift in Sources */,
 				CD60EFD22A67FC69004FCF6C /* WelcomeViewModel.swift in Sources */,
+				4FF5DC3F2A708EF6007E9F56 /* CameraButtonStyle.swift in Sources */,
 				4FFD1EF52A5F63390033A127 /* ExploreView.swift in Sources */,
 				4FFD1F142A61F8A80033A127 /* FirebaseManager.swift in Sources */,
 				4FFD1EEF2A5F62DC0033A127 /* HomeView.swift in Sources */,
-				4FFD1F022A60939F0033A127 /* FrameView.swift in Sources */,
 				4FB576EA2A64504900117296 /* LogoutPopup.swift in Sources */,
 				4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */,
 				4FFD1F0C2A611C860033A127 /* Song.swift in Sources */,
-				CD60EFCE2A67EEDE004FCF6C /* Welcome.swift in Sources */,
 				4FB576FD2A66178B00117296 /* SpotifyManager.swift in Sources */,
 				4FFD1F082A60BDAD0033A127 /* ExploreViewModel.swift in Sources */,
 				4FFD1EE72A5E2B7D0033A127 /* AuthenticationTextfieldStyle.swift in Sources */,
 				4FFD1ED02A5E1B080033A127 /* ContentView.swift in Sources */,
 				4FFD1ECE2A5E1B080033A127 /* myDanceJourneyApp.swift in Sources */,
 				4FB576E72A63C6D800117296 /* ImagePicker.swift in Sources */,
-				4FFD1F0E2A611DC50033A127 /* DanceGoal.swift in Sources */,
 				4FFD1EDD2A5E1C990033A127 /* AuthenticationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +515,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myDanceJourney/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -638,6 +629,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myDanceJourney/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -761,6 +755,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		4FF5DC392A70635E007E9F56 /* XCRemoteSwiftPackageReference "SwiftUICam" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pierreveron/SwiftUICam";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -768,6 +770,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4FB576F92A66178100117296 /* XCRemoteSwiftPackageReference "SpotifyAPI" */;
 			productName = SpotifyAPI;
+		};
+		4FF5DC3A2A70635E007E9F56 /* SwiftUICam */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FF5DC392A70635E007E9F56 /* XCRemoteSwiftPackageReference "SwiftUICam" */;
+			productName = SwiftUICam;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

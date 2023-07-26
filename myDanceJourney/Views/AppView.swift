@@ -76,7 +76,7 @@ struct AppView: View {
             
         }
         .fullScreenCover(isPresented: $viewModel.showCamera) {
-            CameraView(showCamera: $viewModel.showCamera)
+            CameraProductionView(showCamera: $viewModel.showCamera)
         }
     }
 }

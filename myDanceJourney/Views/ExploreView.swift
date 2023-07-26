@@ -66,7 +66,7 @@ struct ExploreView: View {
                     Button {
                         withAnimation { viewModel.selectedGenre = isSelected ? nil : item }
                     } label: {
-                        Text(item.getName())
+                        Text(item.name)
                             .foregroundColor(isSelected ? .white : .black)
                             .font(.system(size: 14, weight: .semibold))
                             .padding(.horizontal)

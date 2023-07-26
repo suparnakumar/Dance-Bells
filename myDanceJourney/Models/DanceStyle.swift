@@ -18,7 +18,5 @@ enum DanceStyle: String, CaseIterable {
     case edm = "EDM"
     case rock = "Rock"
     
-    func getName() -> String {
-        return self.rawValue
-    }
+    var name: String { self.rawValue }
 }

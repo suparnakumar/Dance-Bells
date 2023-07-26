@@ -16,8 +16,6 @@ class ProfileManager: ObservableObject {
     
     @Published private(set) var savedSongs: [Song] = []
     @Published private(set) var preferredDanceStyles: Set<DanceStyle> = Set()
-    @Published private(set) var danceGoal: DanceGoal = .uninitialized
-    @Published private(set) var danceLevel: DanceLevel = .uninitialized
     
     @Published var isLoggedIn: Bool = false
     
@@ -78,15 +76,6 @@ class ProfileManager: ObservableObject {
     
     func setPreferredDanceStyles(to updatedDanceStyles: Set<DanceStyle>) {
         self.preferredDanceStyles = updatedDanceStyles
-    }
-    
-    
-    func updateDanceGoal(to updatedDanceGoal: DanceGoal) {
-        self.danceGoal = updatedDanceGoal
-    }
-    
-    func updateDanceLevel(to updatedDanceLevel: DanceLevel) {
-        self.danceLevel = updatedDanceLevel
     }
     
     func getUpdatedUserData() {
