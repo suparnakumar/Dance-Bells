@@ -21,6 +21,17 @@ struct WelcomeView: View {
                     .font(.headline)
                     .foregroundColor(.gray)
                     .padding(.bottom, 40)
+                
+                Button(action: {
+                                print("Get Started pressed")
+                            }) {
+                                Text("Get Started")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            .padding()
 
                 NavigationLink(
                     destination: QuestionView(question: questionLevel),
@@ -29,7 +40,7 @@ struct WelcomeView: View {
                         Text("Get Started")
                             .foregroundColor(.white)
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.red)
                             .cornerRadius(15)
                     }
                 )

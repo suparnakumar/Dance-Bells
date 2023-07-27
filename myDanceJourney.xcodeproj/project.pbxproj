@@ -43,6 +43,7 @@
 		BBEFBF43F04A2D7FE0FB3C2D /* Pods_myDanceJourney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */; };
 		CD60EFD22A67FC69004FCF6C /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFD12A67FC69004FCF6C /* WelcomeViewModel.swift */; };
 		CD60EFD62A686395004FCF6C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFD52A686395004FCF6C /* WelcomeView.swift */; };
+		CD60EFD82A715ADA004FCF6C /* QuestionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFD72A715ADA004FCF6C /* QuestionStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD60EFD12A67FC69004FCF6C /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		CD60EFD52A686395004FCF6C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		CD60EFD72A715ADA004FCF6C /* QuestionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStruct.swift; sourceTree = "<group>"; };
 		ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDanceJourney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				4FB576E42A63C25A00117296 /* ProfilePicStruct.swift */,
 				4FB576E92A64504900117296 /* LogoutPopup.swift */,
 				4FB576E62A63C6D800117296 /* ImagePicker.swift */,
+				CD60EFD72A715ADA004FCF6C /* QuestionStruct.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				4FFD1EF52A5F63390033A127 /* ExploreView.swift in Sources */,
 				4FFD1F142A61F8A80033A127 /* FirebaseManager.swift in Sources */,
 				4FFD1EEF2A5F62DC0033A127 /* HomeView.swift in Sources */,
+				CD60EFD82A715ADA004FCF6C /* QuestionStruct.swift in Sources */,
 				4FB576EA2A64504900117296 /* LogoutPopup.swift in Sources */,
 				4FFD1F062A60BC990033A127 /* DanceStyle.swift in Sources */,
 				4FFD1F0C2A611C860033A127 /* Song.swift in Sources */,
