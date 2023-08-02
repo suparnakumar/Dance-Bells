@@ -23,7 +23,7 @@ let ROCK_PLAYLIST_ID = "37i9dQZF1DXcF6B6QPhFDv"
 
 
 class APIManager: ObservableObject {
-
+    
     @Published var popRecs: [Track]?
     @Published var hiphopRecs: [Track]?
     @Published var indieRecs: [Track]?
@@ -32,14 +32,7 @@ class APIManager: ObservableObject {
     @Published var bollywoodRecs: [Track]?
     
     @Published var userProfile: ProfileModel?
-
-    let keychain = Keychain(service: "dev.dancebells.keychain")
-
-    func getToken() -> String? {
-        do { let accessToken = try keychain.get("accessToken"); return accessToken!
-        } catch { print(error); return nil }
-    }
-    
+        
     func getTrackList(forGenre genre: DanceStyle) -> [Track]? {
         switch genre {
         case .pop:
@@ -121,13 +114,13 @@ class APIManager: ObservableObject {
     }
     
     
-    func getRecByGenre(selection: [String], completion: @escaping (RecModel?) -> Void) {
+    private func getRecByGenre(selection: [String], completion: @escaping (RecModel?) -> Void) {
         let limit = 50
         let seedGenres = selection.joined(separator: ",")
         let market = self.userProfile?.country ?? "US"
         let minDanceability = 0.8
-//        let seedArtists = (topArtistsMedium?.items!.prefix(5).map{$0.id!})!.joined(separator: ",")
-//        let seedTracks = (topTracksMedium?.items!.prefix(5).map{$0.id!})!.joined(separator: ",")
+        //        let seedArtists = (topArtistsMedium?.items!.prefix(5).map{$0.id!})!.joined(separator: ",")
+        //        let seedTracks = (topTracksMedium?.items!.prefix(5).map{$0.id!})!.joined(separator: ",")
         let url = URL(string: "https://api.spotify.com/v1/recommendations?limit=\(limit)&seed_genres=\(seedGenres)&market=\(market)&min_danceability=\(minDanceability)")!
         fetch(url: url) { (json) in
             let decoder = JSONDecoder()
@@ -138,7 +131,7 @@ class APIManager: ObservableObject {
     
     private func fetch(url: URL, completion: @escaping (Data) -> Void) {
         let accessToken = getToken()
-  
+        
         // Create a URLRequest object with the URL
         var request = URLRequest(url: url)
         request.addValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")
@@ -158,7 +151,7 @@ class APIManager: ObservableObject {
     
     private func post(url: URL, body: [String: Any], completion: @escaping (Data) -> Void) {
         let accessToken = getToken()
-  
+        
         // Create a URLRequest object with the URL
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -166,7 +159,7 @@ class APIManager: ObservableObject {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-
+        
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
@@ -179,5 +172,17 @@ class APIManager: ObservableObject {
         }
         
         task.resume()
+    }
+    
+    private func getToken() -> String? {
+        let keychain = Keychain(service: "dev.dancebells.keychain")
+
+        do {
+            let accessToken = try keychain.get("accessToken")
+            return accessToken!
+        } catch {
+            print(error)
+            return nil
+        }
     }
 }
