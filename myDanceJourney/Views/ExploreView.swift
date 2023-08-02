@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ExploreView: View {
-    
+    @EnvironmentObject var api: APIManager
     @StateObject var viewModel = ViewModel()
+    
+    private var username: String {
+        guard let username = api.userProfile?.id else { return "You" }
+        return username
+    }
     
     var body: some View {
         VStack {
@@ -78,24 +84,35 @@ struct ExploreView: View {
         }
     }
     
-    private var SongsScrollView: some View {
+    private func TracksScrollView(forTrackList trackList: [Track]) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(1...15, id: \.self) { i in
+            HStack(alignment: .top) {
+                ForEach(trackList) { track in
                     
                     VStack(alignment: .leading) {
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(Color(uiColor: .purple))
-                            .frame(width: 100, height: 100)
+                                                
+                        if let url = URL(string: track.album?.images?[0].url ?? "") {
+                            WebImage(url: url)
+                                .resizable()
+                                .frame(width: 100, height: 100)
+
+                        } else {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(uiColor: .purple))
+                                .frame(width: 100, height: 100)
+
+                        }
                         
-                        Text("Song Name")
-                            .font(.system(size: 12, weight: .semibold))
+                        Text(track.name ?? "Song")
+                            .font(.system(size: 10, weight: .semibold))
                             .foregroundColor(.black)
                         
-                        Text("Artist Name")
-                            .font(.system(size: 10, weight: .medium))
+                        Text(track.artists?[0].name ?? "Artist")
+                            .font(.system(size: 8, weight: .medium))
                             .foregroundColor(.gray)
                     }
+                    .frame(width: 100)
+                    .padding(.horizontal)
                 }
             }
         }
@@ -105,17 +122,17 @@ struct ExploreView: View {
         ScrollView(showsIndicators: false) {
             
             VStack(alignment: .leading) {
-                
-                let titles = ["Trending", "Recommendations for \(SpotifyManager.shared.profile.spotifyDisplayName)", "Pop", "Hip Hop", "Bollywood"]
-                
-                ForEach(titles, id: \.self) { title in
-                    
-                    Text(title)
-                        .font(.system(size: 25, weight: .bold))
-                        .foregroundColor(.black)
-                    
-                    SongsScrollView
-                        .padding(.bottom)
+
+                ForEach(DanceStyle.allCases, id: \.self) { genre in
+                    if let trackList = api.getTrackList(forGenre: genre), trackList.count > 0 {
+                        
+                        Text(genre.name)
+                            .font(.system(size: 25, weight: .bold))
+                            .foregroundColor(.black)
+                        
+                        TracksScrollView(forTrackList: trackList)
+                            .frame(height: 150)
+                    }
                 }
             }
         }
@@ -126,5 +143,8 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
             .environmentObject(ProfileManager())
+            .environmentObject(AuthManager())
+            .environmentObject(APIManager())
+            
     }
 }

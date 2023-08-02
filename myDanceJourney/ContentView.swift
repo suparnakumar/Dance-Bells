@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var auth = AuthManager()
+    @StateObject var api = APIManager()
+    @StateObject var profile = ProfileManager()
     
-    @StateObject var profile = ProfileManager()    
     var body: some View {
         
         if profile.isLoggedIn {
             AppView()
                 .environmentObject(profile)
+                .environmentObject(api)
+                .environmentObject(auth)
         } else {
             AuthenticationView()
                 .environmentObject(profile)
-            
+                .environmentObject(api)
+                .environmentObject(auth)
         }
     }
 }
