@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var auth: AuthManager
+    @EnvironmentObject var api: APIManager
     @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
@@ -22,15 +24,24 @@ struct HomeView: View {
                     .offset(x: viewModel.showSearchBar ? -500 : 0)
             }
             
-            
-            Button("Connect to Spotify") {
-                SpotifyManager.shared.requestAuthorization()
+            if auth.isValidated {
+                let username = api.userProfile?.id?.capitalized
+                Text("Welcome \(username ?? "")")
+            } else {
+                Button("Connect to Spotify") {
+                    auth.loginVisible.toggle()
+                }
+                .foregroundColor(.black)
             }
-            .foregroundColor(.black)
             
             
             Spacer()
             
+        }
+        .sheet(isPresented: $auth.loginVisible, onDismiss: {
+            api.getData()
+        }) {
+            WebView(url: auth.authorizationURL, navigationController: UINavigationController())
         }
         
     }
