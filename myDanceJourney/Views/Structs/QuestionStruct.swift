@@ -53,8 +53,8 @@ struct QuestionStruct_Previews: PreviewProvider {
     static var previews: some View {
         QuestionStruct(
             question:"What level of dance are you at?",
-            options:["Brand new", "Beginner"],
-            subtitles:["I can't dance, but want to learn!", "w"])
+            options:["Brand new", "Beginner", "Intermediate"],
+            subtitles:["I can't dance, but want to learn!", "I can follow a beat.", ""])
     }
 }
 
