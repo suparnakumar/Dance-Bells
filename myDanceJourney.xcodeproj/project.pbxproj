@@ -52,7 +52,6 @@
 		4FFD1F162A635AED0033A127 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */; };
 		BBEFBF43F04A2D7FE0FB3C2D /* Pods_myDanceJourney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18269BFA137B9DE3892499 /* Pods_myDanceJourney.framework */; };
 		CD1DBB192A7BB336005247A0 /* NotifPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1DBB182A7BB336005247A0 /* NotifPreferences.swift */; };
-		CD1DBB1B2A7BBA2C005247A0 /* AnalogClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1DBB1A2A7BBA2C005247A0 /* AnalogClock.swift */; };
 		CD1DBB1D2A7BCB2B005247A0 /* TimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1DBB1C2A7BCB2B005247A0 /* TimeSelector.swift */; };
 		CD60EFD22A67FC69004FCF6C /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFD12A67FC69004FCF6C /* WelcomeViewModel.swift */; };
 		CD60EFD62A686395004FCF6C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60EFD52A686395004FCF6C /* WelcomeView.swift */; };
@@ -104,7 +103,6 @@
 		4FFD1F132A61F8A80033A127 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		4FFD1F152A635AED0033A127 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD1DBB182A7BB336005247A0 /* NotifPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifPreferences.swift; sourceTree = "<group>"; };
-		CD1DBB1A2A7BBA2C005247A0 /* AnalogClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClock.swift; sourceTree = "<group>"; };
 		CD1DBB1C2A7BCB2B005247A0 /* TimeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelector.swift; sourceTree = "<group>"; };
 		CD60EFD12A67FC69004FCF6C /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		CD60EFD52A686395004FCF6C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 				4FB576E62A63C6D800117296 /* ImagePicker.swift */,
 				CD60EFD72A715ADA004FCF6C /* QuestionStruct.swift */,
 				CD1DBB182A7BB336005247A0 /* NotifPreferences.swift */,
-				CD1DBB1A2A7BBA2C005247A0 /* AnalogClock.swift */,
 				CD1DBB1C2A7BCB2B005247A0 /* TimeSelector.swift */,
 			);
 			path = Structs;
@@ -444,7 +441,6 @@
 				CD1DBB192A7BB336005247A0 /* NotifPreferences.swift in Sources */,
 				4FFD1EE72A5E2B7D0033A127 /* AuthenticationTextfieldStyle.swift in Sources */,
 				4FFD1ED02A5E1B080033A127 /* ContentView.swift in Sources */,
-				CD1DBB1B2A7BBA2C005247A0 /* AnalogClock.swift in Sources */,
 				4FFD1ECE2A5E1B080033A127 /* myDanceJourneyApp.swift in Sources */,
 				4FB576E72A63C6D800117296 /* ImagePicker.swift in Sources */,
 				4FFD1EDD2A5E1C990033A127 /* AuthenticationView.swift in Sources */,
