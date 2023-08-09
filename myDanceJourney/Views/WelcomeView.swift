@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State private var isQuestionViewPresented = false
 
     var body: some View {
         NavigationView {
@@ -21,26 +20,14 @@ struct WelcomeView: View {
                     .font(.headline)
                     .foregroundColor(.gray)
                     .padding(.bottom, 40)
-                
-                Button(action: {
-                                print("Get Started pressed")
-                            }) {
-                                Text("Get Started")
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(15)
-                            }
-                            .padding()
 
                 NavigationLink(
                     destination: QuestionView(question: questionLevel),
-                    isActive: $isQuestionViewPresented,
                     label: {
                         Text("Get Started")
                             .foregroundColor(.white)
                             .padding()
-                            .background(Color.red)
+                            .background(Color.blue)
                             .cornerRadius(15)
                     }
                 )
@@ -68,21 +55,37 @@ struct QuestionView: View {
     var question: Question
 
     var body: some View {
-        VStack {
-            Text(question.text)
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.bottom, 20)
-//            Text(question.text)
-//                .font(.headline)
-//                .padding(.bottom, 20)
-
-            ForEach(question.options, id: \.mainText) { option in
-                OptionButton(option: option)
-                    .padding(.bottom, 10)
+        NavigationView {
+            VStack {
+                NavigationLink(
+                    destination: QuestionView(question: questionStyle),
+                    label: {
+                        Text("Get Started")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(15)
+                    }
+                )
             }
+            .padding()
         }
-        .padding()
+        
+//        VStack {
+//            Text(question.text)
+//                .font(.title)
+//                .fontWeight(.bold)
+//                .padding(.bottom, 20)
+////            Text(question.text)
+////                .font(.headline)
+////                .padding(.bottom, 20)
+//
+//            ForEach(question.options, id: \.mainText) { option in
+//                OptionButton(option: option)
+//                    .padding(.bottom, 10)
+//            }
+//        }
+//        .padding()
     }
 }
 
