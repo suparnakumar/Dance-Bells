@@ -636,6 +636,8 @@ PODS:
     - "gRPC-C++ (~> 1.44.0)"
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseFirestoreSwift (9.6.0):
+    - FirebaseFirestore (~> 9.0)
   - FirebaseStorage (9.5.0):
     - FirebaseAppCheckInterop (~> 9.0)
     - FirebaseAuthInterop (~> 9.0)
@@ -738,6 +740,7 @@ PODS:
 DEPENDENCIES:
   - FirebaseAuth
   - FirebaseFirestore
+  - FirebaseFirestoreSwift
   - FirebaseStorage
   - SDWebImageSwiftUI
 
@@ -753,6 +756,7 @@ SPEC REPOS:
     - FirebaseCoreExtension
     - FirebaseCoreInternal
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - FirebaseStorage
     - FirebaseStorageInternal
     - GoogleDataTransport
@@ -778,6 +782,7 @@ SPEC CHECKSUMS:
   FirebaseCoreExtension: 2904492b693a6871ddbd1088c9d1fe6e54384050
   FirebaseCoreInternal: 635d1c9a612a6502b6377a0c92af83758076ffff
   FirebaseFirestore: 5a72aa925528f67469b16a54a6cfc369467197e4
+  FirebaseFirestoreSwift: d86a0fef1225c6c1ddfae15b3250700867d63013
   FirebaseStorage: a806d9f9eededf6fb1d906e79221b83ada1dbb4f
   FirebaseStorageInternal: 4f8a9e27391a99ac0692adbbd072fe0e5c4125fe
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
@@ -792,6 +797,6 @@ SPEC CHECKSUMS:
   SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
   SDWebImageSwiftUI: 17396b7889f9abc27231caaeb64c537564284aab
 
-PODFILE CHECKSUM: e0d4c46f3ef1a849543808df8431beccb9c325a2
+PODFILE CHECKSUM: 6a02ff0917408360569dfe6f439c5a07dcac3441
 
 COCOAPODS: 1.12.0

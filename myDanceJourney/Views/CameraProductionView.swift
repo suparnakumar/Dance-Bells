@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftUICam
 
 struct CameraProductionView: View {
+    @EnvironmentObject var profile: ProfileManager
     @Binding var showCamera: Bool
     @StateObject var viewModel = ViewModel()
     
@@ -48,8 +49,45 @@ struct CameraProductionView: View {
                     .foregroundColor(Color(white: 0.8))
             }
             
+            /*
+            if !viewModel.isRecording {
+                songSelectorButton
+                    .offset(y: 150)
+            }
+             */
+            
+            
             
         }
+        .sheet(isPresented: $viewModel.showSongSelector) {
+            SongSelector
+        }
+    }
+    
+    private var SongSelector: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                ForEach(profile.savedSongs) { song in
+                    SongItem(forSong: song)
+                        .environmentObject(profile)
+                        .onTapGesture {
+                            profile.initializeSong(song: song)
+                            viewModel.selectedSong = song
+                            viewModel.showSongSelector = false
+                        }
+                }
+            }
+            .padding(.vertical)
+        }
+    }
+    
+    private var songSelectorButton: some View {
+        Button(viewModel.selectedSong?.name ?? "Select Song") {
+            viewModel.showSongSelector = true
+        }
+        .foregroundColor(.white)
+        .padding(10)
+        .background(RoundedRectangle(cornerRadius: 8).fill(.white.opacity(0.4)))
     }
     
     private var OverlayButtons: some View {
@@ -148,7 +186,16 @@ struct CameraProductionView: View {
     
     private var RecordButton: some View {
         Button {
-            viewModel.toggleRecording()
+            viewModel.toggleRecording() {
+                DispatchQueue.main.async {
+                    if viewModel.isRecording {
+                        profile.playSong()
+                    } else {
+                        viewModel.selectedSong = nil
+                        profile.stopSong()
+                    }
+                }
+            }
         } label: {
             ZStack {
                 Circle()
@@ -188,5 +235,6 @@ struct CameraProductionView: View {
 struct CameraProductionView_Previews: PreviewProvider {
     static var previews: some View {
         CameraProductionView(showCamera: .constant(true))
+            .environmentObject(ProfileManager())
     }
 }

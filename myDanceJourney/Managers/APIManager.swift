@@ -9,97 +9,31 @@ import Foundation
 import KeychainAccess
 import SwiftUI
 
-let TRENDING_PLAYLIST_ID = "6RXgHyqUiEbSmX7NQZ05yQ"
-let NEW_RELEASES_PLAYLIST_ID = "37i9dQZF1DX4JAvHpjipBk"
-let POP_PLAYLIST_ID = "37i9dQZF1DXcBWIGoYBM5M"
-let HIPHOP_PLAYLIST_ID = "37i9dQZF1DX0XUsuxWHRQd"
-let BOLLYWOOD_PLAYLIST_ID = "0S7boBN3rPfo2F1DXX5U7k"
-let CLASSICAL_PLAYLIST_ID = "37i9dQZF1DWWEJlAGA9gs0"
-let COUNTRY_PLAYLIST_ID = "37i9dQZF1DX1lVhptIYRda"
-let INDIE_PLAYLIST_ID = "37i9dQZF1DX2Nc3B70tvx0"
-let EDM_PLAYLIST_ID = "2e3dcRuo9uDH6qD3NOGKAL"
-let ROCK_PLAYLIST_ID = "37i9dQZF1DXcF6B6QPhFDv"
-
-
-
 class APIManager: ObservableObject {
-    
-    @Published var popRecs: [Track]?
-    @Published var hiphopRecs: [Track]?
-    @Published var indieRecs: [Track]?
-    @Published var latinRecs: [Track]?
-    @Published var edmRecs: [Track]?
-    @Published var bollywoodRecs: [Track]?
-    
+    @Published var recommendations: [DanceStyle: [Track]?] = [:]
     @Published var userProfile: ProfileModel?
+    private var topArtists: ArtistsModel?
         
     func getTrackList(forGenre genre: DanceStyle) -> [Track]? {
-        switch genre {
-        case .pop:
-            return self.popRecs
-        case .hiphop:
-            return self.hiphopRecs
-        case .indie:
-            return self.indieRecs
-        case .latin:
-            return self.latinRecs
-        case .edm:
-            return self.edmRecs
-        case .bollywood:
-            return self.bollywoodRecs
-        }
+        return self.recommendations[genre] ?? nil
     }
     
     func getData() {
         self.getProfile() { result in
             DispatchQueue.main.async {
                 self.userProfile = result
+                self.getRecommendations()
             }
-            
-            self.getRecs()
         }
     }
     
-    private func getRecs() {
-        self.getRecByGenre(selection: ["pop", "synth-pop", "pop-film", "progressive-house", "power-pop"]) { (result) in
-            DispatchQueue.main.async {
-                guard let tracks = result?.tracks else { return }
-                self.popRecs = tracks
-            }
-        }
-        
-        self.getRecByGenre(selection: ["hip-hop"]) { (result) in
-            DispatchQueue.main.async {
-                guard let tracks = result?.tracks else { return }
-                self.hiphopRecs = tracks
-            }
-        }
-        
-        self.getRecByGenre(selection: ["indie", "indie-pop"]) { (result) in
-            DispatchQueue.main.async {
-                guard let tracks = result?.tracks else { return }
-                self.indieRecs = tracks
-            }
-        }
-        
-        self.getRecByGenre(selection: ["reggaeton", "latin", "reggae"]) { (result) in
-            DispatchQueue.main.async {
-                guard let tracks = result?.tracks else { return }
-                self.latinRecs = tracks
-            }
-        }
-        
-        self.getRecByGenre(selection: ["edm", "club", "house"]) { (result) in
-            DispatchQueue.main.async {
-                guard let tracks = result?.tracks else { return }
-                self.edmRecs = tracks
-            }
-        }
-        
-        self.getRecByGenre(selection: ["indian"]) { (result) in
-            DispatchQueue.main.async {
-                guard let tracks = result?.tracks else { return }
-                self.bollywoodRecs = tracks
+    private func getRecommendations() {
+        for danceStyle in DanceStyle.allCases {
+            self.getTrackList(forGenre: danceStyle.genres) { (result) in
+                DispatchQueue.main.async {
+                    guard let tracks = result?.tracks else { return }
+                    self.recommendations[danceStyle] = tracks
+                }
             }
         }
     }
@@ -113,13 +47,13 @@ class APIManager: ObservableObject {
         }
     }
     
-    
-    private func getRecByGenre(selection: [String], completion: @escaping (RecModel?) -> Void) {
+    private func getTrackList(forGenre selection: [String], completion: @escaping (RecModel?) -> Void) {
         let limit = 50
         let seedGenres = selection.joined(separator: ",")
         let market = self.userProfile?.country ?? "US"
-        let minDanceability = 0.8
-        //        let seedArtists = (topArtistsMedium?.items!.prefix(5).map{$0.id!})!.joined(separator: ",")
+        let minDanceability = 0.4
+        
+        //        guard let seedArtists = (self.topArtists?.items?.prefix(5-seedGenres.count).map{$0.id!})?.joined(separator: ",") else { print("FAIL"); return }
         //        let seedTracks = (topTracksMedium?.items!.prefix(5).map{$0.id!})!.joined(separator: ",")
         let url = URL(string: "https://api.spotify.com/v1/recommendations?limit=\(limit)&seed_genres=\(seedGenres)&market=\(market)&min_danceability=\(minDanceability)")!
         fetch(url: url) { (json) in

@@ -6,28 +6,29 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import AVKit
 
-class Song: Equatable, Hashable {
-
-    let songName: String
-    let artistName: String
-    let formattedSongDuration: String
-    let pictureURL: String
-    let songURL: String
+final class Song: Codable, Identifiable {
+    var id: String
+    var name: String
+    var downloadUrl: String
+    var dateAdded: Timestamp
     
-    init(songName: String, artistName: String, formattedSongDuration: String, pictureURL: String, songURL: String) {
-        self.songName = songName
-        self.artistName = artistName
-        self.formattedSongDuration = formattedSongDuration
-        self.pictureURL = pictureURL
-        self.songURL = songURL
-    }
+    var rawName: String? = nil
+    var artistName: String? = nil
+    var duration: Double? = nil
     
     static func == (lhs: Song, rhs: Song) -> Bool {
-        return lhs.songName == rhs.songName && lhs.artistName == rhs.artistName
+        return lhs.id == rhs.id
     }
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine("\(songName)--\(artistName)")
+    init(name: String, artistName: String, duration: Double) {
+        self.id = UUID().uuidString
+        self.name = name
+        self.downloadUrl = ""
+        self.dateAdded = Timestamp()
+        self.artistName = artistName
+        self.duration = duration
     }
 }

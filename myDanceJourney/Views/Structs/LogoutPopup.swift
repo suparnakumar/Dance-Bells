@@ -14,17 +14,17 @@ struct LogoutPopup: View {
     private var PopupInformation: some View {
         VStack {
             HStack {
-                ProfilePicStruct(profile.profilePicURL, radius: 60)
+                ProfilePicStruct(profile.profilePic, radius: 60)
                 
                 
-                Text("@\(profile.username)")
+                Text("@\(profile.profile?.username ?? "")")
                     .foregroundColor(.black)
                     .font(.system(size: 16, weight: .light))
                 
                 Spacer()
                 
                 Button("Log Out") {
-                    profile.logOut()
+                    profile.signOut()
                 }
                 .font(.system(size: 14, weight: .light))
                 .foregroundColor(.red)

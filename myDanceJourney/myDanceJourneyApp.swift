@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
 
 @main
 struct myDanceJourneyApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
         
     var body: some Scene {
         WindowGroup {

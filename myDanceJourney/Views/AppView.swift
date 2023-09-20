@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+let BG_COLOR = Color(red: 1, green: 0.9, blue: 0.7)
+let ALT_COLOR = Color(red: 1, green: 1, blue: 0.9)
 
 struct AppView: View {
     @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.purple
+        UITabBar.appearance().backgroundColor = UIColor.white
         UITabBar.appearance().unselectedItemTintColor = UIColor.lightGray
     }
     
@@ -53,7 +55,6 @@ struct AppView: View {
             
             Spacer()
             
-            
             SavedMusicView()
                 .tabItem { Label("Saved", systemImage: "bookmark") }
                 .tag(Tab.saved)
@@ -63,7 +64,7 @@ struct AppView: View {
                 .tag(Tab.profile)
         }
         .environmentObject(profile)
-        .tint(.white)
+        .tint(.black)
     }
     
     
@@ -74,9 +75,9 @@ struct AppView: View {
         
             CameraButtonOverlay
             
-        }
-        .fullScreenCover(isPresented: $viewModel.showCamera) {
             CameraProductionView(showCamera: $viewModel.showCamera)
+                .offset(y: viewModel.showCamera ? 0 : 1000)
+            
         }
     }
 }
@@ -85,5 +86,7 @@ struct AppView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
             .environmentObject(ProfileManager())
+            .environmentObject(APIManager())
+            .environmentObject(AuthManager())
     }
 }

@@ -75,10 +75,12 @@ struct AuthenticationView: View {
     
     private var SubmitButton: some View {
         Button(viewModel.authenticationState == .login ? "Log In" : "Sign Up") {
-            if viewModel.authenticationState == .login {
-                loginExistingUser()
-            } else {
-                createNewAccount()
+            Task {
+                if viewModel.authenticationState == .login {
+                    await profile.signIn(withEmail: viewModel.email, password: viewModel.password)
+                } else {
+                    await profile.createNewUser(withEmail: viewModel.email, name: viewModel.fullName, username: viewModel.username, password: viewModel.password)
+                }
             }
         }
         .modifier(AuthenticationButtonStyle(buttonFontSize: BUTTON_FONT_SIZE, buttonColor: BUTTON_COLOR, buttonTextColor: BUTTON_TEXT_COLOR))
@@ -95,76 +97,5 @@ struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
         AuthenticationView()
             .environmentObject(ProfileManager())
-    }
-}
-
-
-extension AuthenticationView {
-    
-    func loginExistingUser() {
-        viewModel.isLoading = true
-
-        // Firebase call to authenticate existing user
-        FirebaseManager.shared.auth.signIn(withEmail: viewModel.email, password: viewModel.password) {
-            result, error in
-            if let err = error {
-                viewModel.feedbackText = convertErrorMessage(err as NSError)
-                viewModel.isLoading = false
-                return
-            }
-
-            // Login was successful if it reached this line of code
-            viewModel.feedbackText = ""
-            viewModel.isLoading = false
-
-            profile.getUpdatedUserData()
-            profile.isLoggedIn = true
-
-        }
-    }
-    
-    func createNewAccount() {
-        guard viewModel.password == viewModel.reEnteredPassword else {
-            viewModel.feedbackText = "Passwords do not match"
-            return
-        }
-        
-        viewModel.isLoading = true
-        
-        FirebaseManager.shared.auth.createUser(withEmail: viewModel.email, password: viewModel.password) {
-            result, error in
-            if let err = error {
-                viewModel.feedbackText = convertErrorMessage(err as NSError)
-                viewModel.isLoading = false
-                return
-            }
-
-            // Create Account was successful if it reached this line of code
-            viewModel.feedbackText = ""
-            guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return } // Gets current User ID
-
-            let userInfo:Dictionary<String, Any> = [
-                "Username": viewModel.username,
-                "Name": viewModel.fullName,
-                "UID": uid,
-                "ProfilePicURL": ""
-                ]
-            // Stores userInfo into user's firestore file
-            FirebaseManager.shared.firestore.collection("users").document(uid).setData(userInfo) { err in
-                if let err = err {
-                    print(err)
-                    return
-                }
-            }
-
-            profile.getUpdatedUserData()
-            profile.isLoggedIn = true
-            viewModel.isLoading = false
-        }
-        
-        
-        
-        
-        
     }
 }

@@ -22,7 +22,7 @@ struct ProfileView: View {
                 withAnimation { viewModel.showLogoutPopup.toggle() }
             } label: {
                 HStack(spacing: 10) {
-                    Text(profile.name)
+                    Text(profile.profile?.name ?? "")
                         .font(.system(size: 18, weight: .semibold))
                     
                     Image(systemName: "chevron.down")
@@ -41,14 +41,14 @@ struct ProfileView: View {
     
     private var ProfilePic: some View {
         ZStack {
-            ProfilePicStruct(profile.profilePicURL, radius: 120)
+            ProfilePicStruct(profile.profilePic, radius: 120)
         
             Button {
                 viewModel.showImagePicker = true
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(size: 30, weight: .regular))
-                    .foregroundColor(Color(uiColor: .purple).opacity(0.6))
+                    .foregroundColor(Color(white: 0.6))
                     .background(Circle().fill(.white))
             }
             .offset(x: 40, y: 40)
@@ -94,10 +94,10 @@ struct ProfileView: View {
                 ProfilePic
                     .padding(.vertical)
                 
-                Text("@\(profile.username)")
+                Text("@\(profile.profile?.username ?? "")")
                     .font(.system(size: 18, weight: .medium))
                 
-                Text(profile.bio)
+                Text(profile.profile?.bio ?? "")
                     .foregroundColor(.gray)
                     .font(.system(size: 15, weight: .regular))
                     .padding()
@@ -118,7 +118,11 @@ struct ProfileView: View {
         .fullScreenCover(
             isPresented: $viewModel.showImagePicker,
             onDismiss: {
-                profile.updateProfilePic(viewModel.newProfilePic)
+                Task {
+                    if let pfp = viewModel.newProfilePic {
+                        await profile.saveProfilePic(image: pfp)
+                    }
+                }
                 viewModel.showImagePicker = false
             }
         ) {

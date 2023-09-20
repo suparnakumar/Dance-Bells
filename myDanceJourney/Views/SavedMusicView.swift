@@ -12,6 +12,49 @@ struct SavedMusicView: View {
     @EnvironmentObject var profile: ProfileManager
     @StateObject var viewModel = ViewModel()
     
+    var body: some View {
+        VStack(spacing: 0) {
+            
+            SearchBar.padding()
+
+            SongListScrollView
+            
+            AddSongButton
+            
+            Spacer()
+            
+            if viewModel.currentSongPlaying != nil {
+                //SongPlayer
+            }
+            
+            
+        }
+        .sheet(isPresented: $viewModel.showDocumentPicker) {
+            DocumentPicker(songData: $viewModel.songData, showNewSongSheet: $viewModel.showNewSongSheet)
+                .environmentObject(profile)
+        }
+        .sheet(isPresented: $viewModel.showNewSongSheet) {
+            SaveNewSongPopup(viewModel: viewModel)
+                .environmentObject(profile)
+        }
+    }
+    
+    private var AddSongButton: some View {
+        Button {
+            viewModel.showDocumentPicker.toggle()
+        } label: {
+            HStack {
+                Text("Add Song")
+                Image(systemName: "plus")
+            }
+            .foregroundColor(.white)
+            .font(.system(size: 18))
+            .padding()
+            .background(Capsule().fill(.purple))
+        }
+    }
+    
+    
     private var SearchBar: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 5)
@@ -40,6 +83,7 @@ struct SavedMusicView: View {
         .frame(maxHeight: 10)
     }
     
+    /*
     private struct SongItemView: View {
         var song: Song
         @Binding var currentSongPlaying: Song?
@@ -146,31 +190,16 @@ struct SavedMusicView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 50)
     }
-    
+     */
+     
     private var SongListScrollView: some View {
         ScrollView {
             VStack(spacing: 0) {
-                ForEach(profile.savedSongs, id: \.self) { song in
-                    SongItemView(song: song, currentSongPlaying: $viewModel.currentSongPlaying)
+                ForEach(profile.savedSongs) { song in
+                    SongItem(forSong: song)
+                        .environmentObject(profile)
                 }
             }
-        }
-    }
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            
-            SearchBar.padding()
-            
-            SongListScrollView
-            
-            Spacer()
-            
-            if viewModel.currentSongPlaying != nil {
-                SongPlayer
-            }
-            
-            
         }
     }
 }
@@ -179,5 +208,7 @@ struct SavedMusicView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
             .environmentObject(ProfileManager())
+            .environmentObject(AuthManager())
+            .environmentObject(APIManager())
     }
 }

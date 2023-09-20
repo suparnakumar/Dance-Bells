@@ -8,6 +8,7 @@ target 'myDanceJourney' do
   # Pods for myDanceJourney
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
+pod 'FirebaseFirestoreSwift'
 pod 'FirebaseStorage'
 pod 'SDWebImageSwiftUI'
 

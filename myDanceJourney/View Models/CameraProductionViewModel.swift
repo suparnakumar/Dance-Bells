@@ -55,9 +55,11 @@ extension CameraProductionView {
         @Published private(set) var showDelaySlider: Bool = false
         @Published var isEditingDelay: Bool = false
         
+        @Published var selectedSong: Song? = nil
+        @Published var showSongSelector: Bool = false
         
         
-        func toggleRecording() {
+        func toggleRecording(completion: @escaping () -> () ) {
             let delay = self.isRecording ? 0 : self.delayInSeconds
             
             for i in 0...Int(delay) {
@@ -71,8 +73,10 @@ extension CameraProductionView {
                 guard let self = self else { return }
                 withAnimation { self.delayDisplay = nil }
                 withAnimation { self.isRecording.toggle() }
-                self.toggleVideoRecording(events: self.events)
+                //self.toggleVideoRecording(events: self.events)
+                completion()
             }
+                
         }
         
         func toggleFlash() {
